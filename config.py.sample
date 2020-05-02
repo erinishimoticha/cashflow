@@ -1,0 +1,14 @@
+"""
+Balance and Bill configuration
+"""
+from datetime import date
+from models import Bill, Income, Balance, Period
+
+# Update this to reflect your current cash balance and the date the balance was from.
+balance = Balance(date(2020, 5, 2), 10000)
+
+# Update this to reflect your recurring bills and income
+bills = [
+    Bill('Rent', -2000, Period(date(2020, 1, 1), months=1)),
+    Income('Paycheck', 2000, Period(date(2020, 5, 1), weeks=2)),
+]
