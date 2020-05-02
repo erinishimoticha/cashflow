@@ -31,3 +31,29 @@ Yearly travel around Christmas gets reserved in October
 ```
 Bill('Christmas Trip', -2000, Period(date(2020, 10, 1), years=1)),
 ```
+
+## Execute the script
+```
+python3.7 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt 
+./run.py
+```
+
+Example output
+```
+(venv) eishimotich-mbp:cashflow eishimoticha$ ./run.py 
+starting balance: $10000
+Date        Transaction      Transaction Amount    New Balance
+----------  -------------  --------------------  -------------
+2020-05-15  Paycheck                  $2,000.00     $12,000.00
+2020-05-29  Paycheck                  $2,000.00     $14,000.00
+2020-06-01  Rent                     -$2,000.00     $12,000.00
+2020-06-01  Credit Card              -$1,000.00     $11,000.00
+2020-06-12  Paycheck                  $2,000.00     $13,000.00
+2020-06-26  Paycheck                  $2,000.00     $15,000.00
+2020-07-01  Rent                     -$2,000.00     $13,000.00
+2020-07-01  Credit Card              -$1,000.00     $12,000.00
+2020-07-10  Paycheck                  $2,000.00     $14,000.00
+2020-07-24  Paycheck                  $2,000.00     $16,000.00
+```

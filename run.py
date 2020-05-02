@@ -2,15 +2,13 @@
 """
 Given a set of recurring transactions, generate a the future balances.
 """
-from datetime import date
 from tabulate import tabulate
 import locale
 
-from config import balance, bills
+from config import balance, bills, to_date
 
 
 locale.setlocale(locale.LC_ALL, '')
-TO_DATE = date(2021, 12, 31)
 transactions = []
 rows = []
 headers = ['Date', 'Transaction', 'Transaction Amount', 'New Balance']
@@ -19,7 +17,7 @@ headers = ['Date', 'Transaction', 'Transaction Amount', 'New Balance']
 for bill in bills:
     transaction = bill.transaction()
 
-    while transaction.date < TO_DATE:
+    while transaction.date < to_date:
         if transaction.date > balance.date:
             transactions.append(transaction)
 
@@ -27,7 +25,7 @@ for bill in bills:
 
 transactions.sort(key=lambda x: x.date)
 
-print(f'starting balance: ${balance}')
+print(f'starting balance: ${balance.amount}')
 for transaction in transactions:
     balance.amount += transaction.bill.amount
     rows.append([
