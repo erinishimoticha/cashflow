@@ -1,7 +1,7 @@
 import unittest
 from datetime import date
 
-from models import Period
+from ..models import Period
 
 
 class TestPeriod(unittest.TestCase):

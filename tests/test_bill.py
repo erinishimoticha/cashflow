@@ -1,7 +1,7 @@
 import unittest
 from datetime import date
 
-from models import Bill, Period
+from ..models import Bill, Period
 
 
 class TestBill(unittest.TestCase):
