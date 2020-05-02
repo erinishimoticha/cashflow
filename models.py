@@ -4,6 +4,7 @@ Datatypes
 from datetime import date, timedelta
 from calendar import monthrange
 
+
 class Bill:
     def __init__(self, name, amount, period):
         self.name = name
@@ -40,7 +41,7 @@ class Period():
         month = sourcedate.month - 1 + months
         year = sourcedate.year + month // 12
         month = month % 12 + 1
-        day = min(sourcedate.day, monthrange(year,month)[1])
+        day = min(sourcedate.day, monthrange(year, month)[1])
         return date(year, month, day)
 
     def increment(self):
